@@ -1,0 +1,60 @@
+:root {
+  --O-radius: 10px;
+}
+.cell {
+  position: relative;
+  border-radius: var(--radius);
+  display: grid;
+  place-items: center;
+  font-size: xx-large;
+  font-weight: bolder;
+  background: linear-gradient(to top right, #14bdaccc, #14bd85a1);
+}
+.cell > .x {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+.cell > .x::before,
+.cell > .x::after {
+  position: absolute;
+  content: "";
+  background-color: #0a0a0c;
+  width: 15%;
+  height: 90%;
+  border-radius: 50%;
+}
+.cell > .x::before {
+  transform: rotate(45deg);
+}
+.cell > .x::after {
+  transform: rotate(-45deg);
+}
+.cell > .o {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+.cell > .o::after {
+  position: absolute;
+  content: "";
+  width: 60%;
+  height: 60%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  border: var(--O-radius) solid black;
+  border-radius: 50%;
+}
+.cell > .o,
+.cell > .x {
+  cursor: not-allowed;
+}
